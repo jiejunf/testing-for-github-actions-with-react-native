@@ -1,0 +1,21 @@
+name: react-native-android-build-apk
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: |
+          cd project;yarn install
+      - name: Build Android Release
+        run: |
+          cd project/android && ./gradlew assembleRelease
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: project/android/app/build/outputs/apk/release/
