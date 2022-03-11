@@ -28,6 +28,7 @@ jobs:
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
           workspace-path: project/ios/project.xcworkspace # optional
+          build-pods: true
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
