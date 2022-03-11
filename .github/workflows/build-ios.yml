@@ -29,6 +29,7 @@ jobs:
           team-id: ${{ secrets.TEAM_ID }}
           workspace-path: project/ios/project.xcworkspace # optional
           build-pods: true
+          pods-path: project/ios/Podfile
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
