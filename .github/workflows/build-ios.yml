@@ -28,3 +28,15 @@ jobs:
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
           workspace-path: project/ios/project.xcodeproj # optional
+      - name: Upload Artifact
+          uses: actions/upload-artifact@v1
+          with:
+            name: output.ipa
+            path: ./
+#      - name: 'Upload app to TestFlight'
+#        uses: apple-actions/upload-testflight-build@v1
+#        with:
+#          app-path: 'output.ipa'
+#          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+#          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+#          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
