@@ -29,10 +29,10 @@ jobs:
           team-id: ${{ secrets.TEAM_ID }}
           workspace-path: project/ios/project.xcodeproj # optional
       - name: Upload Artifact
-          uses: actions/upload-artifact@v1
-          with:
-            name: output.ipa
-            path: ./
+        uses: actions/upload-artifact@v1
+        with:
+          name: output.ipa
+          path: ./
 #      - name: 'Upload app to TestFlight'
 #        uses: apple-actions/upload-testflight-build@v1
 #        with:
