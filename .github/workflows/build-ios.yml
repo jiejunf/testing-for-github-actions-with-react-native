@@ -18,7 +18,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: cd project; yarn install
+      - name: Install node_module
+        run: cd project; yarn install
+      - name: Install pods
+        run: cd project/ios; pod install
       - name: Build iOS Action
         uses: sparkfabrik/ios-build-action@v1.2.0
         with:
@@ -28,8 +31,8 @@ jobs:
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
           workspace-path: project/ios/project.xcworkspace # optional
-          build-pods: true
-          pods-path: project/ios/Podfile
+#          build-pods: true
+#          pods-path: project/ios/Podfile
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
