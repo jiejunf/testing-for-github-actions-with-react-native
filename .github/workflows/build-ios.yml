@@ -27,7 +27,7 @@ jobs:
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
-          workspace-path: project/ios/project.wcworkspace # optional
+          workspace-path: project/ios/project.xcworkspace # optional
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
