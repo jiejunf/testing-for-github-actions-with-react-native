@@ -23,7 +23,7 @@ jobs:
       - name: Install pods
         run: cd project/ios; pod install
       - name: Build iOS Action
-        uses: sparkfabrik/ios-build-action@v1.2.0
+        uses: jiejunf/ios-build-action@fix-0413
         with:
           project-path: project/ios/project.xcodeproj
           p12-base64: ${{ secrets.P12_BASE64 }}
